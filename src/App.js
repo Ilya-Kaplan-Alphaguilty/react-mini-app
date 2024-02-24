@@ -18,6 +18,13 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
+        <h1>Init data unsafe</h1>
+        <p>{JSON.stringify(initDataUnsafe)}</p>
+
+        <h1>Init data</h1>
+        <p>{JSON.stringify(initData)}</p>
+
         <a
           className="App-link"
           href="https://reactjs.org"
