@@ -1,7 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useInitData } from "@vkruglikov/react-telegram-web-app";
+import { useEffect } from "react";
 
 function App() {
+  const [initDataUnsafe, initData] = useInitData();
+
+  useEffect(() => {
+    console.log("initDataUnsafe", initDataUnsafe);
+    console.log("initData", initData);
+  }, [initData, initDataUnsafe]);
+
   return (
     <div className="App">
       <header className="App-header">
