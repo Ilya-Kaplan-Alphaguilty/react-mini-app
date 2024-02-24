@@ -20,10 +20,22 @@ function App() {
         </p>
 
         <h1>Init data unsafe</h1>
-        <p>{JSON.stringify(initDataUnsafe)}</p>
+        <button
+          onClick={() => {
+            navigator.clipboard.writeText(JSON.stringify(initDataUnsafe));
+          }}
+        >
+          Copy init data unsafe
+        </button>
 
         <h1>Init data</h1>
-        <p>{JSON.stringify(initData)}</p>
+        <button
+          onClick={() => {
+            navigator.clipboard.writeText(JSON.stringify(initData));
+          }}
+        >
+          Copy init data
+        </button>
 
         <a
           className="App-link"
