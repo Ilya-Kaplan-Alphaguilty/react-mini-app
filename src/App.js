@@ -14,7 +14,7 @@ function App() {
   }, [initData, initDataUnsafe]);
 
   useEffect(() => {
-    console.log(searchParams.get("test"));
+    console.log(searchParams.get("ref"));
   }, [searchParams]);
 
   return (
@@ -44,7 +44,7 @@ function App() {
         </button>
 
         <h1>Search params</h1>
-        <h2>{searchParams.get("test")}</h2>
+        <h2>{searchParams.get("ref")}</h2>
 
         <a
           className="App-link"
