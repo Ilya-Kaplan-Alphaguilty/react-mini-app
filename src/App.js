@@ -17,6 +17,8 @@ function App() {
     console.log(searchParams.get("ref"));
   }, [searchParams]);
 
+  console.log("initDataUnsafe, initData", window.Telegram.WebApp);
+
   return (
     <div className="App">
       <header className="App-header">
