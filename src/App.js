@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useInitData } from "@vkruglikov/react-telegram-web-app";
+import { BackButton, useInitData } from "@vkruglikov/react-telegram-web-app";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useElementSize } from "./useElementSize";
@@ -29,6 +29,8 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
+        <BackButton onClick={() => console.log("here")} />
 
         {/* <h1>Init data unsafe</h1>
         <button
