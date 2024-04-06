@@ -4,6 +4,7 @@ import { BackButton, useInitData } from "@vkruglikov/react-telegram-web-app";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useElementSize } from "./useElementSize";
+import GoogleLogin from "./Google";
 
 function App() {
   const [initDataUnsafe, initData] = useInitData();
@@ -24,9 +25,11 @@ function App() {
 
   return (
     <div className="App" ref={setRef}>
-      <button onClick={() => window.open("https://www.google.com", "_self")}>
+      {/* <button onClick={() => window.open("https://www.google.com", "_self")}>
         test
-      </button>
+      </button> */}
+
+      <GoogleLogin />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
