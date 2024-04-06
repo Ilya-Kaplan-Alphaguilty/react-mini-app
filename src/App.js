@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App" ref={setRef}>
-      <button onClick={() => window.open("www.google.com", "_blank")}>
+      <button onClick={() => window.open("https://www.google.com", "_blank")}>
         test
       </button>
       <header className="App-header">
