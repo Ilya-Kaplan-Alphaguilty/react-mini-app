@@ -9,7 +9,7 @@ const googleUrl =
 const GoogleLogin = () => {
   const [isLoaded, setIsLoaded] = useState(true);
 
-  const searchParams = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const onAuthDone = useCallback((authData) => {
     //   if (authData.error || authData.code) {
