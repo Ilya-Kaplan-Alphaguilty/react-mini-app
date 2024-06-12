@@ -1,10 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
+
 import { BackButton, useInitData } from "@vkruglikov/react-telegram-web-app";
-import { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
-import { useElementSize } from "./useElementSize";
+
 import GoogleLogin from "./Google";
+import logo from "./logo.svg";
+import { useEffect } from "react";
+import { useElementSize } from "./useElementSize";
+import { useSearchParams } from "react-router-dom";
 
 function App() {
   const [initDataUnsafe, initData] = useInitData();
@@ -34,6 +36,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+          <a href="t.me/privax_test_bot/test">test</a>
         </p>
 
         <BackButton onClick={() => console.log("here")} />
