@@ -36,7 +36,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
-          <a href="t.me/privax_test_bot/test">test</a>
+          <a href="https://t.me/privax_test_bot/test">test</a>
         </p>
 
         <BackButton onClick={() => console.log("here")} />
