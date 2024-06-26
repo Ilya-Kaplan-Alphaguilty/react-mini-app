@@ -63,6 +63,10 @@ function App() {
         <p>Width: {size.width}</p>
         <p>Height: {size.height}</p>
 
+        <button onClick={() => navigator.share({ url: "https://google.com" })}>
+          test
+        </button>
+
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea corporis
           officia quas eius, qui unde vero? Provident soluta unde cum temporibus
