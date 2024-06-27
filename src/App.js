@@ -41,7 +41,7 @@ function App() {
 
         <BackButton onClick={() => console.log("here")} />
 
-        {/* <h1>Init data unsafe</h1>
+        <h1>Init data unsafe</h1>
         <button
           onClick={() => {
             navigator.clipboard.writeText(JSON.stringify(initDataUnsafe));
@@ -57,7 +57,7 @@ function App() {
           }}
         >
           Copy init data
-        </button> */}
+        </button>
 
         <h1>Size</h1>
         <p>Width: {size.width}</p>
