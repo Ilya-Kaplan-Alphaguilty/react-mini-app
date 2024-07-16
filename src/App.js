@@ -1,16 +1,24 @@
 import "./App.css";
 
-import { BackButton, useInitData } from "@vkruglikov/react-telegram-web-app";
+import {
+  BackButton,
+  useInitData,
+  useReadTextFromClipboard,
+} from "@vkruglikov/react-telegram-web-app";
+import { useEffect, useState } from "react";
 
 import GoogleLogin from "./Google";
 import logo from "./logo.svg";
-import { useEffect } from "react";
 import { useElementSize } from "./useElementSize";
 import { useSearchParams } from "react-router-dom";
 
 function App() {
+  const [text, setText] = useState("");
+
   const [initDataUnsafe, initData] = useInitData();
   const [searchParams] = useSearchParams();
+
+  const readText = useReadTextFromClipboard();
 
   const { setRef, size } = useElementSize();
 
@@ -66,6 +74,11 @@ function App() {
         <button onClick={() => navigator.share({ url: "https://google.com" })}>
           test
         </button>
+
+        <button onClick={() => readText().then(setText)}>Read text</button>
+
+        <h1>Clipboard text</h1>
+        <p>{text}</p>
 
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea corporis
