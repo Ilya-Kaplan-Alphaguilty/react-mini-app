@@ -94,6 +94,7 @@ function App() {
 
         <h1>Clipboard text</h1>
         <p>{text}</p>
+        <p>{text1}</p>
 
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea corporis
