@@ -75,7 +75,16 @@ function App() {
           test
         </button>
 
-        <button onClick={() => readText().then(setText)}>Read text</button>
+        <button
+          onClick={() =>
+            readText().then((value) => {
+              console.log(value);
+              setText(value);
+            })
+          }
+        >
+          Read text
+        </button>
 
         <h1>Clipboard text</h1>
         <p>{text}</p>
