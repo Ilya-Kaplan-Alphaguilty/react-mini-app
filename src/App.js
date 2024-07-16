@@ -14,6 +14,7 @@ import { useSearchParams } from "react-router-dom";
 
 function App() {
   const [text, setText] = useState("");
+  const [text1, setText1] = useState("");
 
   const [initDataUnsafe, initData] = useInitData();
   const [searchParams] = useSearchParams();
@@ -80,6 +81,11 @@ function App() {
             readText().then((value) => {
               console.log(value);
               setText(value);
+
+              navigator.clipboard.readText().then((text) => {
+                console.log("Clipboard text", text);
+                setText1(text);
+              });
             })
           }
         >
