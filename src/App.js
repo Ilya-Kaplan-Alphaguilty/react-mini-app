@@ -34,6 +34,34 @@ function App() {
 
   console.log("initDataUnsafe, initData", window.Telegram.WebApp);
 
+  const tg = window.Telegram.WebApp;
+  tg.expand(); // Optional: Expand the web app to full view
+
+  // Function to trigger the invoice
+  function openInvoice() {
+    console.log("openInvoice");
+
+    try {
+      window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
+        slug: "https://t.me/$4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
+      });
+    } catch (error) {
+      console.error("Error opening invoice:", error);
+    }
+  }
+
+  // Listen for the "invoice_closed" event
+  tg.onEvent("invoice_closed", (eventData) => {
+    console.log("Invoice closed event data:", eventData);
+
+    // Additional logic when the invoice is closed
+    if (eventData?.status === "paid") {
+      alert("Thank you for your payment!");
+    } else {
+      alert("Payment was not completed.");
+    }
+  });
+
   return (
     <div className="App" ref={setRef}>
       {/* <button onClick={() => window.open("https://www.google.com", "_self")}>
@@ -76,18 +104,7 @@ function App() {
           test
         </button>
 
-        <button
-          onClick={() => {
-            // https://t.me/$-ZkdJzBSIErZDQAA7droX2x0da0
-            window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
-              slug: "https://t.me/$4i_N9jBSIEoIDgAAavwccGvfsjQ",
-            });
-
-            window.Telegram.WebView.onEvent("invoice_closed", console.log);
-          }}
-        >
-          Test payment
-        </button>
+        <button onClick={openInvoice}>Test payment</button>
 
         <button
           onClick={() =>
