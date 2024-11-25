@@ -43,7 +43,7 @@ function App() {
 
     try {
       window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
-        slug: "https://t.me/$4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
+        slug: "t.me/$4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
       });
     } catch (error) {
       console.error("Error opening invoice:", error);
