@@ -4,6 +4,7 @@ import {
   BackButton,
   useInitData,
   useReadTextFromClipboard,
+  useWebApp,
 } from "@vkruglikov/react-telegram-web-app";
 import { useEffect, useState } from "react";
 
@@ -18,6 +19,7 @@ function App() {
 
   const [initDataUnsafe, initData] = useInitData();
   const [searchParams] = useSearchParams();
+  const webApp = useWebApp();
 
   const readText = useReadTextFromClipboard();
 
@@ -74,6 +76,19 @@ function App() {
 
         <button onClick={() => navigator.share({ url: "https://google.com" })}>
           test
+        </button>
+
+        <button
+          onClick={() => {
+            // https://t.me/$-ZkdJzBSIErZDQAA7droX2x0da0
+            window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
+              slug: "https://t.me/$-ZkdJzBSIErZDQAA7droX2x0da0",
+            });
+
+            window.Telegram.WebView.onEvent("invoice_closed", console.log);
+          }}
+        >
+          Test payment
         </button>
 
         <button
