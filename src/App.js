@@ -80,7 +80,7 @@ function App() {
           onClick={() => {
             // https://t.me/$-ZkdJzBSIErZDQAA7droX2x0da0
             window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
-              slug: "https://t.me/$-ZkdJzBSIErZDQAA7droX2x0da0",
+              slug: "https://t.me/$4i_N9jBSIEoIDgAAavwccGvfsjQ",
             });
 
             window.Telegram.WebView.onEvent("invoice_closed", console.log);
