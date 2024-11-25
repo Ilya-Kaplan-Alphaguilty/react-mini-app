@@ -19,7 +19,6 @@ function App() {
 
   const [initDataUnsafe, initData] = useInitData();
   const [searchParams] = useSearchParams();
-  const webApp = useWebApp();
 
   const readText = useReadTextFromClipboard();
 
