@@ -4,6 +4,7 @@ import {
   BackButton,
   useInitData,
   useReadTextFromClipboard,
+  useWebApp,
 } from "@vkruglikov/react-telegram-web-app";
 import { useEffect, useState } from "react";
 
@@ -18,6 +19,7 @@ function App() {
 
   const [initDataUnsafe, initData] = useInitData();
   const [searchParams] = useSearchParams();
+  const webApp = useWebApp();
 
   const readText = useReadTextFromClipboard();
 
@@ -41,43 +43,7 @@ function App() {
   function openInvoice1() {
     try {
       console.log("openInvoice 1");
-      window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
-        slug: "tg://invoice?slug=4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
-      });
-    } catch (error) {
-      console.error("Error opening invoice:", error);
-    }
-  }
-
-  function openInvoice2() {
-    try {
-      console.log("openInvoice 2");
-      window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
-        slug: "t.me/$4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
-      });
-    } catch (error) {
-      console.error("Error opening invoice:", error);
-    }
-  }
-
-  function openInvoice3() {
-    try {
-      console.log("openInvoice 3");
-      window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
-        slug: "t.me/invoice/4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
-      });
-    } catch (error) {
-      console.error("Error opening invoice:", error);
-    }
-  }
-
-  function openInvoice4() {
-    try {
-      console.log("openInvoice 4");
-      console.log("openInvoice ");
-      window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
-        slug: "4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
-      });
+      webApp.openInvoice("https://t.me/$4i_N9jBSIEoIDgAAavwccGvfsjQ");
     } catch (error) {
       console.error("Error opening invoice:", error);
     }
@@ -138,9 +104,6 @@ function App() {
         </button>
 
         <button onClick={openInvoice1}>Test payment 1</button>
-        <button onClick={openInvoice2}>Test payment 2</button>
-        <button onClick={openInvoice3}>Test payment 3</button>
-        <button onClick={openInvoice4}>Test payment 4</button>
 
         <button
           onClick={() =>
