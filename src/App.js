@@ -4,7 +4,6 @@ import {
   BackButton,
   useInitData,
   useReadTextFromClipboard,
-  useWebApp,
 } from "@vkruglikov/react-telegram-web-app";
 import { useEffect, useState } from "react";
 
