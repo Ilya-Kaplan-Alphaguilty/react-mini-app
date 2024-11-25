@@ -38,12 +38,45 @@ function App() {
   tg.expand(); // Optional: Expand the web app to full view
 
   // Function to trigger the invoice
-  function openInvoice() {
-    console.log("openInvoice");
-
+  function openInvoice1() {
     try {
+      console.log("openInvoice 1");
+      window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
+        slug: "tg://invoice?slug=4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
+      });
+    } catch (error) {
+      console.error("Error opening invoice:", error);
+    }
+  }
+
+  function openInvoice2() {
+    try {
+      console.log("openInvoice 2");
       window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
         slug: "t.me/$4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
+      });
+    } catch (error) {
+      console.error("Error opening invoice:", error);
+    }
+  }
+
+  function openInvoice3() {
+    try {
+      console.log("openInvoice 3");
+      window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
+        slug: "t.me/invoice/4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
+      });
+    } catch (error) {
+      console.error("Error opening invoice:", error);
+    }
+  }
+
+  function openInvoice4() {
+    try {
+      console.log("openInvoice 4");
+      console.log("openInvoice ");
+      window.TelegramWebviewProxy.postEvent("web_app_open_invoice", {
+        slug: "4i_N9jBSIEoIDgAAavwccGvfsjQ", // Your valid invoice slug
       });
     } catch (error) {
       console.error("Error opening invoice:", error);
@@ -104,7 +137,10 @@ function App() {
           test
         </button>
 
-        <button onClick={openInvoice}>Test payment</button>
+        <button onClick={openInvoice1}>Test payment 1</button>
+        <button onClick={openInvoice2}>Test payment 2</button>
+        <button onClick={openInvoice3}>Test payment 3</button>
+        <button onClick={openInvoice4}>Test payment 4</button>
 
         <button
           onClick={() =>
