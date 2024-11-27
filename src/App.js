@@ -43,7 +43,7 @@ function App() {
   function openInvoice1() {
     try {
       console.log("openInvoice 1");
-      webApp.openInvoice("https://t.me/$4i_N9jBSIEoIDgAAavwccGvfsjQ");
+      webApp.openInvoice("https://t.me/$ye7B4yuyOEpzCwAAFs9Fk89e5E8");
     } catch (error) {
       console.error("Error opening invoice:", error);
     }
